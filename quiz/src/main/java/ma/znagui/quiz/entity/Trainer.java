@@ -12,6 +12,6 @@ import java.time.LocalDate;
 @ToString
 @Entity
 public class Trainer extends Person {
-    private LocalDate integrationDate;
+    private String Specialty;
 
 }

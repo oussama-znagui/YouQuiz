@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: quiz
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432c/youquiz
+    username: postgres
+    password: 123

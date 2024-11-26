@@ -9,18 +9,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
 @Entity
-public class Person {
+public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String fullName;
 
-
-
+    private String firstName;
+    private String lastName;
+    private LocalDate birthDate;
+    private String address;
 
 }
