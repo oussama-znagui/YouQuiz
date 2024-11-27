@@ -1,4 +1,4 @@
-package ma.znagui.quiz.dto;
+package ma.znagui.quiz.dto.trainer;
 
 
 import jakarta.validation.constraints.NotBlank;

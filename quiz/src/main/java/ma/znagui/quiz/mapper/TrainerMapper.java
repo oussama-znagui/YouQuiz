@@ -1,18 +1,20 @@
 package ma.znagui.quiz.mapper;
 
 
-import ma.znagui.quiz.dto.TrainerCreateDTO;
-import ma.znagui.quiz.dto.TrainerResponseDTO;
+import ma.znagui.quiz.dto.trainer.TrainerCreateDTO;
+import ma.znagui.quiz.dto.trainer.TrainerEmbdedDTO;
+import ma.znagui.quiz.dto.trainer.TrainerResponseDTO;
 import ma.znagui.quiz.entity.Trainer;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses = {QuizMapper.class})
 public interface TrainerMapper {
 
     public TrainerResponseDTO trainerToResponseDTO(Trainer t);
 
     
     public Trainer crateDTOtoTranier(TrainerCreateDTO dto);
+
+    public TrainerEmbdedDTO trainerToEmbdedDTO(Trainer trainer);
 }

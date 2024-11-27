@@ -1,13 +1,14 @@
-package ma.znagui.quiz.dto;
+package ma.znagui.quiz.dto.trainer;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import ma.znagui.quiz.dto.quiz.QuizEmbdedDTO;
+import ma.znagui.quiz.entity.Quiz;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 
 public class TrainerResponseDTO {
@@ -17,6 +18,8 @@ public class TrainerResponseDTO {
     private String lastName;
     private LocalDate birthDate;
     private String address;
-    private String Specialty;
+    private String specialty;
+    private List<QuizEmbdedDTO> quizzes;
+
 
 }

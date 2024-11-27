@@ -1,7 +1,7 @@
 package ma.znagui.quiz.service;
 
-import ma.znagui.quiz.dto.TrainerCreateDTO;
-import ma.znagui.quiz.dto.TrainerResponseDTO;
+import ma.znagui.quiz.dto.trainer.TrainerCreateDTO;
+import ma.znagui.quiz.dto.trainer.TrainerResponseDTO;
 import ma.znagui.quiz.entity.Trainer;
 
 public interface TrainerService {
