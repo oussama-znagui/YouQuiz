@@ -2,8 +2,10 @@ spring:
   application:
     name: quiz
   jpa:
+    hibernate:
+      ddl-auto: update
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432c/youquiz
+    url: jdbc:postgresql://localhost:5432/youquiz
     username: postgres
     password: 123

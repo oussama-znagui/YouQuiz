@@ -19,11 +19,11 @@ import java.time.LocalDate;
 public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    protected Long id;
 
-    private String firstName;
-    private String lastName;
-    private LocalDate birthDate;
-    private String address;
+    protected String firstName;
+    protected String lastName;
+    protected LocalDate birthDate;
+    protected String address;
 
 }
