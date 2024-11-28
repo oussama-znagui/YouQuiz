@@ -3,6 +3,7 @@ package ma.znagui.quiz.service.impl;
 import ma.znagui.quiz.dto.quiz.QuizCreateDTO;
 import ma.znagui.quiz.dto.quiz.QuizResponseDTO;
 import ma.znagui.quiz.entity.Quiz;
+import ma.znagui.quiz.exception.ResourceNotFoundExeption;
 import ma.znagui.quiz.mapper.QuizMapper;
 import ma.znagui.quiz.repository.QuizRepository;
 import ma.znagui.quiz.service.QuizService;
@@ -29,6 +30,9 @@ public class QuizServiceImpl implements QuizService {
 
 
     public QuizResponseDTO getOneQuiz(Long id) {
-        return null;
+        Quiz quiz = repository.findById(id).orElseThrow(() -> new ResourceNotFoundExeption("quiz",id));
+
+
+        return mapper.quizToResponseDTO(quiz);
     }
 }
