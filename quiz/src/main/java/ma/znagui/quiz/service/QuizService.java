@@ -7,5 +7,7 @@ import ma.znagui.quiz.entity.Quiz;
 public interface QuizService {
     QuizResponseDTO createQuiz(QuizCreateDTO dto);
     QuizResponseDTO getOneQuiz(Long id);
+    Quiz getQuizEntityByID(Long id);
+
 
 }

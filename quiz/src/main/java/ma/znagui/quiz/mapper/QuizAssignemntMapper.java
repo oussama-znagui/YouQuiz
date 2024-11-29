@@ -1,6 +1,7 @@
 package ma.znagui.quiz.mapper;
 
 import ma.znagui.quiz.dto.quizAssignement.QuizAssignementCreateDTO;
+import ma.znagui.quiz.dto.quizAssignement.QuizAssignementEmbdedDTO;
 import ma.znagui.quiz.dto.quizAssignement.QuizAssignementResponseDTO;
 import ma.znagui.quiz.entity.QuizAssignement;
 import org.mapstruct.Mapper;
@@ -17,6 +18,7 @@ public interface QuizAssignemntMapper {
     public QuizAssignement createDTOtoQuizAssignement(QuizAssignementCreateDTO dto);
 
     public QuizAssignementResponseDTO quizAssignementToResponseDTO(QuizAssignement quizAssignement);
+    public QuizAssignementEmbdedDTO quizAssignementToEmbdedDTO(QuizAssignement quizAssignement);
 
 }
 

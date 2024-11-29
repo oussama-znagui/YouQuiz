@@ -26,4 +26,14 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
+    @ExceptionHandler(DatesAreNotValidException.class)
+    public ResponseEntity<String> handelDatesAreNotValidException(DatesAreNotValidException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
+    @ExceptionHandler(MaxAttemptsReachedException.class)
+    public ResponseEntity<String> handelMaxAttemptsReachedException(MaxAttemptsReachedException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
 }

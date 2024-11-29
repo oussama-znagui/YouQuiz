@@ -35,4 +35,9 @@ public class QuizServiceImpl implements QuizService {
 
         return mapper.quizToResponseDTO(quiz);
     }
+
+    @Override
+    public Quiz getQuizEntityByID(Long id) {
+        return repository.findById(id).orElseThrow(() -> new ResourceNotFoundExeption("quiz",id));
+    }
 }
