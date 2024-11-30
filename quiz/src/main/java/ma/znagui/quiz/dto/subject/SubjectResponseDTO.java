@@ -7,7 +7,8 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 public class SubjectResponseDTO {
+
     private Long id;
     private String title;
-    List<SubjectResponseDTO> subjects;
+    private List<SubjectResponseDTO> subjects;
 }

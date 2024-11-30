@@ -12,7 +12,7 @@ public class SubjectCreateDTO {
     @NotBlank(message = "le titre svp")
     private String title;
 
-    @CheckExisting(entityC = Subject.class)
+//    @CheckExisting(entityC = Subject.class)
     private Long subjectID;
 
 }

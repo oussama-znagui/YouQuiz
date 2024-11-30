@@ -3,6 +3,7 @@ package ma.znagui.quiz.service.impl;
 import ma.znagui.quiz.dto.subject.SubjectCreateDTO;
 import ma.znagui.quiz.dto.subject.SubjectResponseDTO;
 import ma.znagui.quiz.entity.Subject;
+import ma.znagui.quiz.exception.ResourceNotFoundExeption;
 import ma.znagui.quiz.mapper.SubjectMapper;
 import ma.znagui.quiz.repository.SubjectRepository;
 import ma.znagui.quiz.service.SubjectService;
@@ -24,6 +25,9 @@ public class SubjectServiceImpl implements SubjectService {
     }
 
     public SubjectResponseDTO getOneSubject(Long id) {
-        return null;
+        Subject subject = repository.findById(id).orElseThrow(() -> new ResourceNotFoundExeption("subject",id));
+
+
+        return mapper.subjectToResponseDTO(subject);
     }
 }
