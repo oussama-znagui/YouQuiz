@@ -3,6 +3,7 @@ package ma.znagui.quiz.service.impl;
 import ma.znagui.quiz.dto.level.LevelCreateDTO;
 import ma.znagui.quiz.dto.level.LevelResponseDTO;
 import ma.znagui.quiz.entity.Level;
+import ma.znagui.quiz.exception.ResourceNotFoundExeption;
 import ma.znagui.quiz.mapper.LevelMapper;
 import ma.znagui.quiz.repository.LevelRepository;
 import ma.znagui.quiz.service.LevelService;
@@ -24,5 +25,9 @@ public class LevelServiceImpl implements LevelService {
 
     public LevelResponseDTO getOneLevel(Long id) {
         return null;
+    }
+
+    public Level getLevelEntityByID(Long id) {
+        return repository.findById(id).orElseThrow(() -> new   ResourceNotFoundExeption("level",id));
     }
 }

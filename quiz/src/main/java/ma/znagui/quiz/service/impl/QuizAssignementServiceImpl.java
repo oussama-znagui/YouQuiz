@@ -56,4 +56,24 @@ public class QuizAssignementServiceImpl implements QuizAssignementService {
 
         return mapper.quizAssignementToResponseDTO(quizAssignement);
     }
+
+    public void addScoreAndResultToAssignemnt(Long id, Double points) {
+        QuizAssignement quizAssignement = repository.findById(id).orElseThrow(() -> new ResourceNotFoundExeption("assignement",id));
+        if (quizAssignement.getScore() == null){
+
+            quizAssignement.setScore(points);
+        }else {
+            Double newScore =    quizAssignement.getScore() + points;
+            quizAssignement.setScore(newScore);
+        }
+
+     repository.save(quizAssignement);
+
+
+
+    }
+
+    public QuizAssignement getEntityByID(Long id) {
+        return repository.findById(id).orElseThrow(() -> new ResourceNotFoundExeption("assignement",id));
+    }
 }

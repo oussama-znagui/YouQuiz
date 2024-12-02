@@ -30,4 +30,8 @@ public class SubjectServiceImpl implements SubjectService {
 
         return mapper.subjectToResponseDTO(subject);
     }
+
+    public Subject getSubjectEntiteByID(Long id) {
+        return repository.findById(id).orElseThrow(() -> new   ResourceNotFoundExeption("subject",id));
+    }
 }

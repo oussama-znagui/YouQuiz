@@ -37,4 +37,7 @@ public class Question {
 //    @OneToMany(mappedBy = "question")
 //    List<AnswerValidation> answerValidations;
 
+    @OneToMany(mappedBy = "question")
+    private List<QuestionAnswer> questionAnswers;
+
 }

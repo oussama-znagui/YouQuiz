@@ -20,7 +20,9 @@ public class Answer {
 
     private String answer;
 
-//    @OneToMany(mappedBy = "answer")
-//    private List<AnswerValidation> answerValidations;
+    @OneToMany(mappedBy = "answer")
+    private List<QuestionAnswer> questions;
+
+
 
 }

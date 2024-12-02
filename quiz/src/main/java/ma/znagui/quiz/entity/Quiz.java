@@ -34,6 +34,10 @@ public class Quiz {
     @OneToMany(mappedBy = "quiz")
     private List<QuizAssignement> quizAssignements;
 
+    @OneToMany(mappedBy = "quiz")
+    private List<QuizQuestion> quizQuestions;
+
+
 
 
 

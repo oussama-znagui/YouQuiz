@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,4 +32,7 @@ public class QuizAssignement {
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;
+
+    @OneToMany(mappedBy = "quizAssignement")
+    private List<AnswerValidation> answerValidations;
 }

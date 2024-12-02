@@ -1,5 +1,6 @@
 package ma.znagui.quiz.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,21 +12,19 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-    public class QuizQuestion {
+public class QuestionAnswer {
     @EmbeddedId
-    private QuizQuestionKey id;
+    private QuestionAnswerKey id;
+    private Double points;
 
-    private int timer;
-
-    @MapsId("quizID")
+    @MapsId("questionID")
     @ManyToOne
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
-    @MapsId("quesionID")
-    @ManyToOne
-    @JoinColumn(name = "quesion_id")
+    @JoinColumn(name = "question_id" ,nullable = false)
     private Question question;
 
-
+    @MapsId("answerID")
+    @ManyToOne
+    @JoinColumn(name = "answer_id" ,nullable = false)
+    private Answer answer;
 
 }
